@@ -61,7 +61,6 @@ router.put('/', async (req: Request, res: Response) => {
     const defuntReq:defuntModel = req.body;
       let defuntDel = await Defunt.remove(defuntReq);
       res.json(defuntDel);
-    }
   } catch (error) {
     res.json({'err': error});
   }

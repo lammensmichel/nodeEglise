@@ -12,40 +12,40 @@ const DefuntSchema = new mongoose.Schema({
         type: String
     },
     dateDuDeces: {
-        type: String
+        type: Date
     },
     lieuDuDeces: {
         type: String
     },
     dateDeNaissance: {
-        type: String
+        type: Date
     },
     dateDesFunerailles: {
-        type: String
+        type: Date
     },
     lieuDeDepart: {
         type: String
     },
     heureDeDepart: {
-        type: String
+        type: Date
     },
     egliseDe: {
         type: String
     },
     heureDeLaMesse: {
-        type: String
+        type: Date
     },
     crematorium: {
         type: String
     },
     heureCrematorium: {
-        type: String
+        type: Date
     },
     cimetiere: {
         type: String
     },
     heureCimetiere: {
-        type: String
+        type: Date
     }
 }, { timestamps: true });
 const Defunt = mongoose.model("Defunt", DefuntSchema);

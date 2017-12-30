@@ -58,13 +58,10 @@ router.put('/', (req, res) => __awaiter(this, void 0, void 0, function* () {
         let defuntDel = yield defunt_1.default.remove(defuntReq);
         res.json(defuntDel);
     }
-    finally {
+    catch (error) {
+        res.json({ 'err': error });
     }
 }));
-try { }
-catch (error) {
-    res.json({ 'err': error });
-}
 // Export the express.Router() instance to be used by server.ts
 exports.DefuntController = router;
 //# sourceMappingURL=DefuntController.js.map

@@ -2,7 +2,6 @@
 import * as express from 'express';
 import {urlencoded, json} from 'body-parser';
 
-
 // Import WelcomeController from controllers entry point
 import {DefuntController} from './controllers';
 
