@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose = require("mongoose");
-const DefuntSchema = new mongoose.Schema({
+var mongoose = require("mongoose");
+var DefuntSchema = new mongoose.Schema({
     nom: {
         type: String
     },
@@ -48,6 +48,6 @@ const DefuntSchema = new mongoose.Schema({
         type: String
     }
 }, { timestamps: true });
-const Defunt = mongoose.model("Defunt", DefuntSchema);
+var Defunt = mongoose.model("Defunt", DefuntSchema);
 exports.default = Defunt;
 //# sourceMappingURL=defunt.js.map

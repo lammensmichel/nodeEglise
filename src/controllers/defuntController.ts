@@ -41,17 +41,19 @@ router.put('/', async (req: Request, res: Response) => {
     res.json(defunt);
 
 }).post('/',async (req: Request, res: Response) => {
-     
-  const defuntReq:defuntModel = req.body;
-  let defunt = await Defunt.findById(defuntReq._id);
-  if (defunt === null ) res.json({'err': 'id not found'});
-  else {
-    defunt.set(defuntReq);
-    let defuntSave = await defunt.save().catch((err)=>{
-      res.json({'err': err});
-    }) 
-    res.json(defuntSave);
+  try {
+  
+    const defuntReq:defuntModel = req.body;
+    let defunt = await Defunt.findById(defuntReq._id);
+    if (defunt === null ) res.json({'err': 'id not found'});
+    else {
+      defunt.set(defuntReq);
+      let defuntSave = await defunt.save();
+      res.json(defuntSave);
+    }
 
+  } catch (error) {
+    res.json({'err': error});
   }
 
 });

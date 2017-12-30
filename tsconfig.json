@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es5",
     "module": "commonjs",
     "outDir": "dist",
     "strict": true,
@@ -18,5 +18,8 @@
   ],
   "baseUrl": "types",
   "typeRoots": ["types"],
-  "compileOnSave": true
+  "compileOnSave": true,
+  "compilerOptions": {
+    "lib": [ "es2015" ]
+  }
 }
