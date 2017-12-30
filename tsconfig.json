@@ -3,7 +3,8 @@
     "target": "es5",
     "module": "commonjs",
     "outDir": "dist",
-    "strict": true,
+    "noImplicitUseStrict": true,
+    "strict": false,
     "sourceMap": true
   },
   "files": [

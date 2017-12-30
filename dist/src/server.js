@@ -1,4 +1,3 @@
-"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 // Import everything from express and assign it to the express variable
 var express = require("express");
