@@ -41,8 +41,8 @@ router.put('/', async (req: Request, res: Response) => {
     res.json(defunt);
 
 }).post('/',async (req: Request, res: Response) => {
-  try {
   
+  try {
     const defuntReq:defuntModel = req.body;
     let defunt = await Defunt.findById(defuntReq._id);
     if (defunt === null ) res.json({'err': 'id not found'});
@@ -51,14 +51,22 @@ router.put('/', async (req: Request, res: Response) => {
       let defuntSave = await defunt.save();
       res.json(defuntSave);
     }
-
   } catch (error) {
     res.json({'err': error});
   }
 
-});
+}).delete('/',async (req: Request, res: Response) => {
+  
+  try {
+    const defuntReq:defuntModel = req.body;
+      let defuntDel = await Defunt.remove(defuntReq);
+      res.json(defuntDel);
+    }
+  } catch (error) {
+    res.json({'err': error});
+  }
 
-
+})
 
 // Export the express.Router() instance to be used by server.ts
 export const DefuntController: Router = router;

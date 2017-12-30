@@ -52,7 +52,19 @@ router.put('/', (req, res) => __awaiter(this, void 0, void 0, function* () {
     catch (error) {
         res.json({ 'err': error });
     }
+})).delete('/', (req, res) => __awaiter(this, void 0, void 0, function* () {
+    try {
+        const defuntReq = req.body;
+        let defuntDel = yield defunt_1.default.remove(defuntReq);
+        res.json(defuntDel);
+    }
+    finally {
+    }
 }));
+try { }
+catch (error) {
+    res.json({ 'err': error });
+}
 // Export the express.Router() instance to be used by server.ts
 exports.DefuntController = router;
 //# sourceMappingURL=DefuntController.js.map
