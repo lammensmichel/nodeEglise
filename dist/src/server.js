@@ -5,6 +5,7 @@ const express = require("express");
 const body_parser_1 = require("body-parser");
 // Import WelcomeController from controllers entry point
 const controllers_1 = require("./controllers");
+const lieuController_1 = require("./controllers/lieuController");
 // Create a new express application instance
 const app = express();
 // parse application/x-www-form-urlencoded
@@ -12,5 +13,6 @@ app.use(body_parser_1.urlencoded({ extended: false }));
 // parse application/json
 app.use(body_parser_1.json());
 app.use('/Defunt', controllers_1.DefuntController);
+app.use('/Lieu', lieuController_1.LieuController);
 exports.application = app;
 //# sourceMappingURL=server.js.map
