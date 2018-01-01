@@ -26,4 +26,5 @@ const LieuSchema = new mongoose.Schema({
 }, { timestamps: true });
 const Lieu = mongoose.model("Lieu", LieuSchema);
 exports.default = Lieu;
+exports.Lieuschema = LieuSchema;
 //# sourceMappingURL=lieu.js.map

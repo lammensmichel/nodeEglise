@@ -5,6 +5,7 @@ import {urlencoded, json} from 'body-parser';
 // Import WelcomeController from controllers entry point
 import {DefuntController} from './controllers';
 import { LieuController } from './controllers/lieuController';
+import { horaireController } from './controllers/horaireController';
 
 // Create a new express application instance
 const app: express.Application = express();
@@ -15,6 +16,7 @@ app.use(urlencoded({ extended: false }))
 app.use(json())
 
 app.use('/Defunt', DefuntController);
-app.use('/Lieu', LieuController )
+app.use('/Lieu', LieuController );
+app.use('/Horaire',horaireController);
 
 export const application: express.Application = app;

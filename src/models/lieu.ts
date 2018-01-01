@@ -1,4 +1,5 @@
 import * as mongoose from 'mongoose';
+import { LieuSchema } from './defunt';
 
   enum Typelieu {
     eglise,
@@ -15,7 +16,7 @@ export type lieuModel = mongoose.Document & {
   typeLieu: Typelieu
 }
 
-const LieuSchema = new mongoose.Schema({
+const LieuSchema : mongoose.Schema = new mongoose.Schema({
   rue:{
     type: String
   },
@@ -34,5 +35,7 @@ const LieuSchema = new mongoose.Schema({
 
 }, { timestamps: true })
 
+
 const Lieu = mongoose.model("Lieu", LieuSchema);
 export default Lieu;
+export const Lieuschema: mongoose.Schema = LieuSchema;
