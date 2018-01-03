@@ -42,6 +42,19 @@ router.put('/', async (req: Request, res: Response) => {
     });
     res.json(horaire);
 
+}).get('/:startDate/:endDate', async (req: Request, res: Response) => {
+
+  const { startDate, endDate } = req.params;
+  const horaire = await Horaire.find({
+    date: {
+      $gte: new Date(startDate),
+      $lt: new Date(endDate)
+    }
+  }).catch((err)=>{
+    res.json({'err': err});
+  });
+  res.json(horaire);
+
 }).post('/',async (req: Request, res: Response) => {
   
   try {

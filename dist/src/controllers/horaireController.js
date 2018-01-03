@@ -40,6 +40,17 @@ router.put('/', (req, res) => __awaiter(this, void 0, void 0, function* () {
         res.json({ 'err': err });
     });
     res.json(horaire);
+})).get('/:startDate/:endDate', (req, res) => __awaiter(this, void 0, void 0, function* () {
+    const { startDate, endDate } = req.params;
+    const horaire = yield horaire_1.default.find({
+        date: {
+            $gte: new Date(startDate),
+            $lt: new Date(endDate)
+        }
+    }).catch((err) => {
+        res.json({ 'err': err });
+    });
+    res.json(horaire);
 })).post('/', (req, res) => __awaiter(this, void 0, void 0, function* () {
     try {
         const horaireReq = req.body;

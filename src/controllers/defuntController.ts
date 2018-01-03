@@ -50,6 +50,7 @@ router.put('/', async (req: Request, res: Response) => {
   
   try {
     const defuntReq:defuntModel = req.body;
+    console.log(defuntReq);
     let defunt = await Defunt.findById(defuntReq._id);
     if (defunt === null ) res.json({'err': 'id not found'});
     else {

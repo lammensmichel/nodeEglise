@@ -46,6 +46,7 @@ router.put('/', (req, res) => __awaiter(this, void 0, void 0, function* () {
 })).post('/', (req, res) => __awaiter(this, void 0, void 0, function* () {
     try {
         const defuntReq = req.body;
+        console.log(defuntReq);
         let defunt = yield defunt_1.default.findById(defuntReq._id);
         if (defunt === null)
             res.json({ 'err': 'id not found' });

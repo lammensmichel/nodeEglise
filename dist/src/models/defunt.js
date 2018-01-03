@@ -17,6 +17,9 @@ const DefuntSchema = new mongoose.Schema({
     lieuDuDeces: {
         type: String
     },
+    lieuDeNaissance: {
+        type: String
+    },
     dateDeNaissance: {
         type: Date
     },

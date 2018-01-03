@@ -9,6 +9,7 @@ export type defuntModel = mongoose.Document & {
   dateDuDeces: Date,
   lieuDuDeces: String,
   dateDeNaissance: Date,
+  lieuDeNaissance: string,
   dateDesFunerailles: Date,
   lieuDeDepart: String,
   heureDeDepart: Date,
@@ -35,6 +36,9 @@ const DefuntSchema = new mongoose.Schema({
     type: Date
   },
   lieuDuDeces:{
+    type: String
+  },
+  lieuDeNaissance:{
     type: String
   },
   dateDeNaissance:{
