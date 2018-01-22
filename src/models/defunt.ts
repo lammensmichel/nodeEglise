@@ -2,14 +2,9 @@ import * as mongoose from 'mongoose';
 
 
 export type defuntModel = mongoose.Document & {
-  _id: string
-  nom: String,
-  prenom: String,
-  epouxEpouse: String,
+  _id: string,
   dateDuDeces: Date,
   lieuDuDeces: String,
-  dateDeNaissance: Date,
-  lieuDeNaissance: string,
   dateDesFunerailles: Date,
   lieuDeDepart: String,
   heureDeDepart: Date,
@@ -23,26 +18,11 @@ export type defuntModel = mongoose.Document & {
 }
 
 const DefuntSchema = new mongoose.Schema({
-  nom:{
-    type: String
-  },
-  prenom:{
-    type: String
-  },
-  epouxEpouse:{
-    type: String
-  },
   dateDuDeces:{
     type: Date
   },
   lieuDuDeces:{
     type: String
-  },
-  lieuDeNaissance:{
-    type: String
-  },
-  dateDeNaissance:{
-    type: Date
   },
   dateDesFunerailles:{
     type: Date
@@ -75,3 +55,4 @@ const DefuntSchema = new mongoose.Schema({
 
 const Defunt = mongoose.model("Defunt", DefuntSchema);
 export default Defunt;
+export const Defuntschema: mongoose.Schema = DefuntSchema;

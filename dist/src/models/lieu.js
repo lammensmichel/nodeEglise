@@ -3,9 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose = require("mongoose");
 var Typelieu;
 (function (Typelieu) {
-    Typelieu[Typelieu["eglise"] = 0] = "eglise";
-    Typelieu[Typelieu["crematorium"] = 1] = "crematorium";
-    Typelieu[Typelieu["cimetiere"] = 2] = "cimetiere";
+    Typelieu["eglise"] = "eglise";
+    Typelieu["crematorium"] = "crematorium";
+    Typelieu["cimetiere"] = "cimetiere";
 })(Typelieu || (Typelieu = {}));
 const LieuSchema = new mongoose.Schema({
     rue: {

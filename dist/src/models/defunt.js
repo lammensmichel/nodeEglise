@@ -2,26 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose = require("mongoose");
 const DefuntSchema = new mongoose.Schema({
-    nom: {
-        type: String
-    },
-    prenom: {
-        type: String
-    },
-    epouxEpouse: {
-        type: String
-    },
     dateDuDeces: {
         type: Date
     },
     lieuDuDeces: {
         type: String
-    },
-    lieuDeNaissance: {
-        type: String
-    },
-    dateDeNaissance: {
-        type: Date
     },
     dateDesFunerailles: {
         type: Date
@@ -53,4 +38,5 @@ const DefuntSchema = new mongoose.Schema({
 }, { timestamps: true });
 const Defunt = mongoose.model("Defunt", DefuntSchema);
 exports.default = Defunt;
+exports.Defuntschema = DefuntSchema;
 //# sourceMappingURL=defunt.js.map

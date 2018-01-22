@@ -1,10 +1,9 @@
 import * as mongoose from 'mongoose';
-import { LieuSchema } from './defunt';
 
   enum Typelieu {
-    eglise,
-    crematorium,
-    cimetiere
+    eglise = 'eglise',
+    crematorium = 'crematorium',
+    cimetiere = 'cimetiere'
   }
 
 export type lieuModel = mongoose.Document & {

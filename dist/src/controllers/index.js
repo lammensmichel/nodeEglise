@@ -4,4 +4,7 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./DefuntController"));
+__export(require("./personneController"));
+__export(require("./lieuController"));
+__export(require("./horaireController"));
 //# sourceMappingURL=index.js.map
