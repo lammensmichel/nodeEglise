@@ -71,4 +71,4 @@ router.put('/', (req, res) => __awaiter(this, void 0, void 0, function* () {
 }));
 // Export the express.Router() instance to be used by server.ts
 exports.DefuntController = router;
-//# sourceMappingURL=DefuntController.js.map
+//# sourceMappingURL=defuntController.js.map
