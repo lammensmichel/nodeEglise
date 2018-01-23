@@ -15,5 +15,6 @@ app.use('/Defunt', controllers_1.DefuntController);
 app.use('/Lieu', controllers_1.LieuController);
 app.use('/Horaire', controllers_1.horaireController);
 app.use('/Personne', controllers_1.PersonneController);
+app.use('/Pretre', controllers_1.PretreController);
 exports.application = app;
 //# sourceMappingURL=server.js.map

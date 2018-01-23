@@ -1,11 +1,13 @@
 import * as mongoose from 'mongoose';
 import { lieuModel,Lieuschema } from './lieu';
+import { pretreModel, Pretreschema } from './pretre';
 
 
 export type horaireModel = mongoose.Document & {
   _id: string
   date: Date,
-  lieu: lieuModel
+  lieu: lieuModel,
+  pretre: pretreModel
 }
 
 const HoraireSchema = new mongoose.Schema({
@@ -14,6 +16,9 @@ const HoraireSchema = new mongoose.Schema({
   },
   lieu:{
     type: Lieuschema
+  },
+  pretre:{
+    type: Pretreschema
   }
 
 }, { timestamps: true })

@@ -7,4 +7,5 @@ __export(require("./defuntController"));
 __export(require("./personneController"));
 __export(require("./lieuController"));
 __export(require("./horaireController"));
+__export(require("./pretreController"));
 //# sourceMappingURL=index.js.map

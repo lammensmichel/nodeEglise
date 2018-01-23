@@ -7,7 +7,7 @@ import * as mongoose from 'mongoose';
   }
 
 export type lieuModel = mongoose.Document & {
-  _id: string
+  _id: string,
   rue: String,
   numero: String,
   codePostal: String,
@@ -30,7 +30,7 @@ const LieuSchema : mongoose.Schema = new mongoose.Schema({
   },
   typeLieu:{
     type: Typelieu
-  },
+  }
 
 }, { timestamps: true })
 

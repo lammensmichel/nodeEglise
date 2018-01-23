@@ -22,7 +22,7 @@ const LieuSchema = new mongoose.Schema({
     },
     typeLieu: {
         type: Typelieu
-    },
+    }
 }, { timestamps: true });
 const Lieu = mongoose.model("Lieu", LieuSchema);
 exports.default = Lieu;
