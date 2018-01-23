@@ -4,6 +4,9 @@ const mongoose = require("mongoose");
 const lieu_1 = require("./lieu");
 const pretre_1 = require("./pretre");
 const HoraireSchema = new mongoose.Schema({
+    idGoogle: {
+        type: String
+    },
     date: {
         type: Date
     },

@@ -4,13 +4,17 @@ import { pretreModel, Pretreschema } from './pretre';
 
 
 export type horaireModel = mongoose.Document & {
-  _id: string
+  _id: string,
+  idGoogle:string,
   date: Date,
   lieu: lieuModel,
   pretre: pretreModel
 }
 
 const HoraireSchema = new mongoose.Schema({
+  idGoogle:{
+    type: String
+  },
   date:{
     type: Date
   },
