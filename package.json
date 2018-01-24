@@ -9,9 +9,6 @@
     "dev": "NODE_ENV=development nodemon  ./dist/start.js",
     "start": "node ./dist/start.js"
   },
-  "engines":{
-    "node":"8.9.3"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lammensmichel/nodeEglise.git"
