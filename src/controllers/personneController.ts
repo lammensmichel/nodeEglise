@@ -3,6 +3,7 @@ import * as mongoose from 'mongoose';
 import { default as Personne, PersonneModel } from "../models/personne";
 import { request } from 'https';
 import { json } from 'body-parser';
+import { PaginateOptions } from 'mongoose';
 
 // Assign router to the express.Router() instance
 const router: Router = Router();
@@ -22,11 +23,23 @@ router.put('/', async (req: Request, res: Response) => {
   res.json(personneSave);
 
 }).get('/', async (req: Request, res: Response) => {
-  const personnes = await Personne.find().catch((err)=>{
+  let descending: boolean = true;
+  let options: PaginateOptions = <PaginateOptions>{};
+  let rang: string  = <string> req.headers.range ;
+  if(rang){
+    let [min, max] = <Array<number>> rang.split('-').map(Number);;  
+    options.page = min;
+    options.limit = (max-min);
+    const personnes = await Personne.paginate({}, options).catch((err)=>{
       res.json({'err': err});
     }) 
-  res.json(personnes);
-
+    res.json(personnes);
+  }else{
+    const personnes = await Personne.find().catch((err)=>{
+      res.json({'err': err});
+    }) 
+    res.json(personnes);
+  }
 }).get('/:id', async (req: Request, res: Response) => {
 
     const { id } = req.params;

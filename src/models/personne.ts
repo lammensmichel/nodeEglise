@@ -1,6 +1,8 @@
 import * as mongoose from 'mongoose';
+import * as mongoosePaginate from 'mongoose-paginate';
 import { lieuModel,Lieuschema } from './lieu';
 import { defuntModel, Defuntschema } from './defunt';
+
 
 
 export type  PersonneModel = mongoose.Document & {
@@ -34,5 +36,6 @@ const PersonneSchema = new mongoose.Schema({
   },
 }, { timestamps: true })
 
+PersonneSchema.plugin(mongoosePaginate);
 const  Personne = mongoose.model("personne",  PersonneSchema);
 export default  Personne;

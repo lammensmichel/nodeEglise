@@ -24,10 +24,25 @@ router.put('/', (req, res) => __awaiter(this, void 0, void 0, function* () {
     });
     res.json(personneSave);
 })).get('/', (req, res) => __awaiter(this, void 0, void 0, function* () {
-    const personnes = yield personne_1.default.find().catch((err) => {
-        res.json({ 'err': err });
-    });
-    res.json(personnes);
+    let descending = true;
+    let options = {};
+    let rang = req.headers.range;
+    if (rang) {
+        let [min, max] = rang.split('-').map(Number);
+        ;
+        options.page = min;
+        options.limit = (max - min);
+        const personnes = yield personne_1.default.paginate({}, options).catch((err) => {
+            res.json({ 'err': err });
+        });
+        res.json(personnes);
+    }
+    else {
+        const personnes = yield personne_1.default.find().catch((err) => {
+            res.json({ 'err': err });
+        });
+        res.json(personnes);
+    }
 })).get('/:id', (req, res) => __awaiter(this, void 0, void 0, function* () {
     const { id } = req.params;
     const personne = yield personne_1.default.findById(id).catch((err) => {
