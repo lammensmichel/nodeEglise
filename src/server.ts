@@ -10,9 +10,17 @@ import {DefuntController, PersonneController, LieuController, horaireController,
 const app: express.Application = express();
 // parse application/x-www-form-urlencoded
 app.use(urlencoded({ extended: false }))
-
 // parse application/json
 app.use(json())
+
+
+app.all('*', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 
 app.use('/Defunt', DefuntController);
 app.use('/Lieu', LieuController );

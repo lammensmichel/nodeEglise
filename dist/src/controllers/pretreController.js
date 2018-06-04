@@ -16,12 +16,6 @@ const router = express_1.Router();
 //Retrieve = GET
 //Update = POST
 //Delete = DELETE
-router.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
 router.put('/', (req, res) => __awaiter(this, void 0, void 0, function* () {
     let pretreReq = req.body;
     let pretre = new pretre_1.default(pretreReq);
