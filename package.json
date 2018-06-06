@@ -9,12 +9,9 @@
     "dev": "NODE_ENV=development nodemon  ./dist/start.js",
     "start": "node ./dist/start.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lammensmichel/nodeEglise.git"
-  },
+  "repository": "git+https://github.com/lammensmichel/nodeEglise.git",
   "keywords": [],
-  "author": "",
+  "author": "lammensmichel <lammens.michel@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/lammensmichel/nodeEglise/issues"
