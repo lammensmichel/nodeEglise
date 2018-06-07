@@ -6,7 +6,7 @@ dotenv.config({ path: 'variables.env' });
 const dblink = String(process.env.DB_HOST || '');
 // Launch Mongo connection
 mongoose.Promise = global.Promise;
-mongoose.connect(dblink, { useMongoClient: true }, (err) => {
+mongoose.connect(dblink, {}, (err) => {
     if (err)
         console.log(`WTF there was an error ${err.message}`);
     console.log("mongo is now connected to our systeme please request away :)");
